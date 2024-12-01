@@ -548,7 +548,7 @@ speechSynthesis.getVoices();
                 $travelingToTime: Date.now(),
                 $offline_for: '',
                 $active_for: Date.now(),
-                $isVRCPlus: false,
+                $isVRCPlus: true,
                 $isModerator: false,
                 $isTroll: false,
                 $isProbableTroll: false,
@@ -20651,7 +20651,8 @@ speechSynthesis.getVoices();
     // #region | App: Local Avatar Favorites
 
     $app.methods.isLocalUserVrcplusSupporter = function () {
-        return API.currentUser.$isVRCPlus;
+        return true;
+        // return API.currentUser.$isVRCPlus;
     };
 
     $app.data.localAvatarFavoriteGroups = [];
