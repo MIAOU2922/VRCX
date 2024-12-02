@@ -49,9 +49,9 @@ mixin vrcx()
     el-dialog.x-dialog(:before-close="beforeDialogClose" @mousedown.native="dialogMouseDown" @mouseup.native="dialogMouseUp" ref="changeLogDialog" :visible.sync="changeLogDialog.visible" :title="$t('dialog.change_log.header')" width="800px")
         .changelog-dialog(v-if="changeLogDialog.visible")
             h2(v-text="changeLogDialog.buildName")
-            span {{ $t('dialog.change_log.description') }} #[a.x-link(@click="openExternalLink('https://www.patreon.com/Natsumi_VRCX')") Patreon], #[a.x-link(@click="openExternalLink('https://ko-fi.com/natsumi_sama')") Ko-fi].
+            span {{ $t('dialog.change_log.description') }} #[a.x-link(@click="openExternalLink('https://www.patreon.com/_MIAOU__VRCX')") Patreon], #[a.x-link(@click="openExternalLink('https://ko-fi.com/_MIAOU__sama')") Ko-fi].
             vue-markdown(:source="changeLogDialog.changeLog" :linkify="false")
         template(#footer)
             el-button(type="small" @click="openExternalLink('https://github.com/MIAOU2922/VRCX/releases')") {{ $t('dialog.change_log.github') }}
-            el-button(type="small" @click="openExternalLink('https://patreon.com/Natsumi_VRCX')") {{ $t('dialog.change_log.donate') }}
+            el-button(type="small" @click="openExternalLink('https://patreon.com/_MIAOU__VRCX')") {{ $t('dialog.change_log.donate') }}
             el-button(type="small" @click="changeLogDialog.visible = false") {{ $t('dialog.change_log.close') }}

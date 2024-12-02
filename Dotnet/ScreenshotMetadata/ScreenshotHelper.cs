@@ -192,7 +192,7 @@ namespace VRCX
                         return ScreenshotMetadata.JustError(path, "Failed to parse VRCPrint metadata.");
                     }
                 }
-                
+
                 logger.ConditionalDebug("Screenshot file '{0}' has unknown non-JSON metadata:\n{1}\n", path, metadataString);
                 return ScreenshotMetadata.JustError(path, "File has unknown non-JSON metadata.");
             }
@@ -214,7 +214,7 @@ namespace VRCX
                 return ScreenshotMetadata.JustError(path, "Failed to parse screenshot metadata JSON. Check logs.");
             }
         }
-        
+
         public static ScreenshotMetadata ParseVRCPrint(string xmlString)
         {
             var doc = new XmlDocument();
@@ -544,7 +544,7 @@ namespace VRCX
             var metadata = new ScreenshotMetadata();
             // LFS v2 format: https://github.com/knah/VRCMods/blob/c7e84936b52b6f476db452a37ab889eabe576845/LagFreeScreenshots/API/MetadataV2.cs#L35
             // Normal entry
-            // lfs|2|author:usr_032383a7-748c-4fb2-94e4-bcb928e5de6b,Natsumi-sama|world:wrld_b016712b-5ce6-4bcb-9144-c8ed089b520f,35372,pet park test|pos:-60.49379,-0.002925932,5.805772|players:usr_9d73bff9-4543-4b6f-a004-9e257869ff50,-0.85,-0.17,-0.58,Olivia.;usr_3097f91e-a816-4c7a-a625-38fbfdee9f96,12.30,13.72,0.08,Zettai Ryouiki;usr_032383a7-748c-4fb2-94e4-bcb928e5de6b,0.68,0.32,-0.28,Natsumi-sama;usr_7525f45f-517e-442b-9abc-fbcfedb29f84,0.51,0.64,0.70,Weyoun
+            // lfs|2|author:usr_032383a7-748c-4fb2-94e4-bcb928e5de6b,MIAOU2922|world:wrld_b016712b-5ce6-4bcb-9144-c8ed089b520f,35372,pet park test|pos:-60.49379,-0.002925932,5.805772|players:usr_9d73bff9-4543-4b6f-a004-9e257869ff50,-0.85,-0.17,-0.58,Olivia.;usr_3097f91e-a816-4c7a-a625-38fbfdee9f96,12.30,13.72,0.08,Zettai Ryouiki;usr_032383a7-748c-4fb2-94e4-bcb928e5de6b,0.68,0.32,-0.28,MIAOU2922;usr_7525f45f-517e-442b-9abc-fbcfedb29f84,0.51,0.64,0.70,Weyoun
             // Entry with image rotation enabled (rq:)
             // lfs|2|author:usr_8c0a2f22-26d4-4dc9-8396-2ab40e3d07fc,knah|world:wrld_fb4edc80-6c48-43f2-9bd1-2fa9f1345621,35341,Luminescent Ledge|pos:8.231676,0.257298,-0.1983307|rq:2|players:usr_65b9eeeb-7c91-4ad2-8ce4-addb1c161cd6,0.74,0.59,1.57,Jakkuba;usr_6a50647f-d971-4281-90c3-3fe8caf2ba80,8.07,9.76,0.16,SopwithPup;usr_8c0a2f22-26d4-4dc9-8396-2ab40e3d07fc,0.26,1.03,-0.28,knah;usr_7f593ad1-3e9e-4449-a623-5c1c0a8d8a78,0.15,0.60,1.46,NekOwneD
 
@@ -553,7 +553,7 @@ namespace VRCX
             // lfs|1|world:wrld_6caf5200-70e1-46c2-b043-e3c4abe69e0f:47213,The Great Pug|players:usr_290c03d6-66cc-4f0e-b782-c07f5cfa8deb,VirtualTeacup;usr_290c03d6-66cc-4f0e-b782-c07f5cfa8deb,VirtualTeacup
 
             // LFS CVR Edition v1 format: https://github.com/dakyneko/DakyModsCVR/blob/48eecd1bccd1a5b2ea844d899d59cf1186ec9912/LagFreeScreenshots/API/MetadataV2.cs#L41
-            // lfs|cvr|1|author:047b30bd-089d-887c-8734-b0032df5d176,Hordini|world:2e73b387-c6d4-45e9-b998-0fd6aa122c1d,i+efec20004ef1cd8b-404003-93833f-1aee112a,Bono's Basement (Anime) (#816724)|pos:2.196716,0.01250899,-3.817466|players:5301af21-eb8d-7b36-3ef4-b623fa51c2c6,3.778407,0.01250887,-3.815876,DDAkebono;f9e5c36c-41b0-7031-1185-35b4034010c0,4.828233,0.01250893,-3.920135,Natsumi
+            // lfs|cvr|1|author:047b30bd-089d-887c-8734-b0032df5d176,Hordini|world:2e73b387-c6d4-45e9-b998-0fd6aa122c1d,i+efec20004ef1cd8b-404003-93833f-1aee112a,Bono's Basement (Anime) (#816724)|pos:2.196716,0.01250899,-3.817466|players:5301af21-eb8d-7b36-3ef4-b623fa51c2c6,3.778407,0.01250887,-3.815876,DDAkebono;f9e5c36c-41b0-7031-1185-35b4034010c0,4.828233,0.01250893,-3.920135,_MIAOU_
 
             var lfsParts = metadataString.Split('|');
             if (lfsParts[1] == "cvr")

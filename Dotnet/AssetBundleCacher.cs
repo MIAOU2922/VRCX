@@ -1,4 +1,4 @@
-// Copyright(c) 2019-2022 pypy, Natsumi and individual contributors.
+// Copyright(c) 2019-2022 pypy, _MIAOU_ and individual contributors.
 // All rights reserved.
 //
 // This work is licensed under the terms of the MIT license.
@@ -37,7 +37,7 @@ namespace VRCX
 
         public string GetAssetId(string id, string variant = "")
         {
-            using(var sha256 = SHA256.Create())
+            using (var sha256 = SHA256.Create())
             {
                 byte[] hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(id + variant));
                 StringBuilder idHex = new StringBuilder(hash.Length * 2);
@@ -62,16 +62,17 @@ namespace VRCX
             {
                 versionHex += b.ToString("X2");
             }
-            
+
             return versionHex.PadLeft(32, '0');
         }
-        
+
         public int ReverseHexToDecimal(string hexString)
         {
             if (hexString.Length != 32)
                 return 0; // it's cooked
-            
-            try {
+
+            try
+            {
                 var variantVersionHexString = hexString.Substring(16, 8); // 16..24
                 var versionHexString = hexString.Substring(24, 8); // 24..32
                 var versionBytes = new byte[4];
@@ -110,7 +111,7 @@ namespace VRCX
         public string GetVRChatCacheFullLocation(string id, int version, string variant = "", int variantVersion = 0)
         {
             var cachePath = GetVRChatCacheLocation();
-            var idHash = GetAssetId(id, variant); 
+            var idHash = GetAssetId(id, variant);
             var versionLocation = GetAssetVersion(version, variantVersion);
             return Path.Combine(cachePath, idHash, versionLocation);
         }
@@ -130,7 +131,7 @@ namespace VRCX
             var fullLocation = GetVRChatCacheFullLocation(id, version);
             if (!Directory.Exists(fullLocation))
                 fullLocation = GetVRChatCacheFullLocation(id, version, variant, variantVersion);
-            
+
             var fileLocation = Path.Combine(fullLocation, "__data");
             var cachePath = string.Empty;
             if (File.Exists(fileLocation))
@@ -255,7 +256,7 @@ namespace VRCX
             var path = GetVRChatCacheFullLocation(id, version);
             if (Directory.Exists(path))
                 Directory.Delete(path, true);
-            
+
             path = GetVRChatCacheFullLocation(id, version, variant, variantVersion);
             if (Directory.Exists(path))
                 Directory.Delete(path, true);
@@ -304,7 +305,7 @@ namespace VRCX
 
                     if (File.Exists(Path.Combine(versionDirectory.FullName, "__lock")))
                         continue; // skip locked version
-                    
+
                     versionDirectory.Delete(true);
                     output.Add($"{cacheDirectory.Name}\\{versionDirectory.Name}");
                 }

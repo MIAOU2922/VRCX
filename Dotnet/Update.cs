@@ -1,4 +1,4 @@
-// Copyright(c) 2019-2022 pypy, Natsumi and individual contributors.
+// Copyright(c) 2019-2022 pypy, _MIAOU_ and individual contributors.
 // All rights reserved.
 //
 // This work is licensed under the terms of the MIT license.
@@ -37,7 +37,7 @@ namespace VRCX
         {
             var setupArguments = "/S";
             if (Wine.GetIfWine()) setupArguments += " /DISABLE_SHORTCUT=true";
-            
+
             try
             {
                 File.Move(Update_Executable, VRCX_Setup_Executable);
@@ -59,7 +59,7 @@ namespace VRCX
                 MessageBox.Show(e.ToString(), "Update failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         public static void DownloadInstallRedist()
         {
             try
@@ -87,7 +87,7 @@ namespace VRCX
             var httpClientHandler = new HttpClientHandler();
             if (WebApi.ProxySet)
                 httpClientHandler.Proxy = WebApi.Proxy;
-            
+
             var httpClient = new HttpClient(httpClientHandler);
 
             try
@@ -100,9 +100,9 @@ namespace VRCX
 
                     string tempPath = Path.Combine(Path.GetTempPath(), "VRCX");
                     Directory.CreateDirectory(tempPath);
-                    
+
                     string filePath = Path.Combine(tempPath, fileName);
-                    
+
                     using (FileStream fileStream = File.Create(filePath))
                     {
                         response.Content.CopyToAsync(fileStream).Wait();

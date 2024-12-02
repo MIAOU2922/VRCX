@@ -8,7 +8,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <AssemblyTitle>VRCX</AssemblyTitle>
     <Product>VRCX</Product>
-    <Copyright>vrcx-team, pypy, natsumi</Copyright>
+    <Copyright>vrcx-team, pypy, _MIAOU_</Copyright>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>

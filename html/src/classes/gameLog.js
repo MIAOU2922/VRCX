@@ -745,8 +745,8 @@ export default class extends baseClass {
         },
 
         addGameLogLSMedia(gameLog, location) {
-            // [VRCX] LSMedia 0,4268.981,Natsumi-sama,,
-            // [VRCX] LSMedia 0,6298.292,Natsumi-sama,The Outfit (2022), 1080p
+            // [VRCX] LSMedia 0,4268.981,MIAOU2922,,
+            // [VRCX] LSMedia 0,6298.292,MIAOU2922,The Outfit (2022), 1080p
             var data = /LSMedia ([\d.]+),([\d.]+),(.+?),(.+?),(?=[^,]*$)/g.exec(
                 gameLog.data
             );
