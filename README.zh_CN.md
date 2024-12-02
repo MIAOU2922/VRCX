@@ -2,9 +2,9 @@
 
 # <img src="https://raw.githubusercontent.com/vrcx-team/VRCX/master/VRCX.ico" width="64" height="64"> </img> VRCX
 
-[![GitHub release](https://img.shields.io/github/release/vrcx-team/VRCX.svg)](https://github.com/vrcx-team/VRCX/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/vrcx-team/VRCX/total?color=6451f1)](https://github.com/vrcx-team/VRCX/releases/latest)
-[![GitHub Workflow Status](https://github.com/vrcx-team/VRCX/actions/workflows/github_actions.yml/badge.svg)](https://github.com/vrcx-team/VRCX/actions/workflows/github_actions.yml)
+[![GitHub release](https://img.shields.io/github/release/vrcx-team/VRCX.svg)](https://github.com/MIAOU2922/VRCX/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/vrcx-team/VRCX/total?color=6451f1)](https://github.com/MIAOU2922/VRCX/releases/latest)
+[![GitHub Workflow Status](https://github.com/MIAOU2922/VRCX/actions/workflows/github_actions.yml/badge.svg)](https://github.com/MIAOU2922/VRCX/actions/workflows/github_actions.yml)
 [![Crowdin](https://badges.crowdin.net/vrcx/localized.svg)](https://crowdin.com/project/vrcx)
 [![VRCX Discord Invite](https://img.shields.io/discord/854071236363550763?color=%237289DA&logo=discord&logoColor=white&label=discord)](https://vrcx.app/discord)
 
@@ -16,7 +16,7 @@ VRCX 是一个用于 VRChat 的辅助应用，提供有关 VRChat 的一些信�
 
 <div align="center">
 
-从[这里](https://github.com/vrcx-team/VRCX/releases/latest)下载最新的安装程序 (`VRCX_Setup.exe`)
+从[这里](https://github.com/MIAOU2922/VRCX/releases/latest)下载最新的安装程序 (`VRCX_Setup.exe`)
 
 # 特性
 
@@ -35,7 +35,7 @@ VRCX 是一个用于 VRChat 的辅助应用，提供有关 VRChat 的一些信�
 - :floppy_disk: 世界数据保存
   - 对于支持该功能的世界，VRCX 可以保存世界设置、状态和其他数据！
   - **注意**：要使用此功能，你必须在 VRChat 设置中启用“Allow Untrusted URLs”。否则功能不会生效
-  - 对于开发者们：[Wiki Page - World Persistence (PWI)](<https://github.com/vrcx-team/VRCX/wiki/World-Persistence-(PWI)>)
+  - 对于开发者们：[Wiki Page - World Persistence (PWI)](<https://github.com/MIAOU2922/VRCX/wiki/World-Persistence-(PWI)>)
 - :mag: 搜索模型、用户、世界和组
 - :earth_americas: 使用存储在本地并且无限制的收藏夹！妈妈再也不用担心收藏夹不够用了
 - :camera: 在游戏拍摄的图片中存储世界数据，以便你可以记住你在 6 个月前拍摄的那个酷炫的世界！
@@ -55,9 +55,9 @@ VRCX 是一个用于 VRChat 的辅助应用，提供有关 VRChat 的一些信�
 
 ## 一些其他的东西
 
-- 想让 VRCX 看起来独一无二吗？请查看 [Themes](https://github.com/vrcx-team/VRCX/wiki/Themes)（英语）了解如何制作主题
-- 参见[Building from source](https://github.com/vrcx-team/VRCX/wiki/Building-from-source)（英语）了解如何从源码构建 VRCX。
-- 关于如何在 Linux 上运行 VRCX 的指南，请看[这里](https://github.com/vrcx-team/VRCX/wiki/Running-VRCX-on-Linux)（英语）
+- 想让 VRCX 看起来独一无二吗？请查看 [Themes](https://github.com/MIAOU2922/VRCX/wiki/Themes)（英语）了解如何制作主题
+- 参见[Building from source](https://github.com/MIAOU2922/VRCX/wiki/Building-from-source)（英语）了解如何从源码构建 VRCX。
+- 关于如何在 Linux 上运行 VRCX 的指南，请看[这里](https://github.com/MIAOU2922/VRCX/wiki/Running-VRCX-on-Linux)（英语）
 
 # 一些界面截图
 

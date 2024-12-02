@@ -2,9 +2,9 @@
 
 # <img src="https://raw.githubusercontent.com/vrcx-team/VRCX/master/VRCX.ico" width="64" height="64"> </img> VRCX
 
-[![GitHub release](https://img.shields.io/github/release/vrcx-team/VRCX.svg)](https://github.com/vrcx-team/VRCX/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/vrcx-team/VRCX/total?color=6451f1)](https://github.com/vrcx-team/VRCX/releases/latest)
-[![GitHub Workflow Status](https://github.com/vrcx-team/VRCX/actions/workflows/github_actions.yml/badge.svg)](https://github.com/vrcx-team/VRCX/actions/workflows/github_actions.yml)
+[![GitHub release](https://img.shields.io/github/release/vrcx-team/VRCX.svg)](https://github.com/MIAOU2922/VRCX/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/vrcx-team/VRCX/total?color=6451f1)](https://github.com/MIAOU2922/VRCX/releases/latest)
+[![GitHub Workflow Status](https://github.com/MIAOU2922/VRCX/actions/workflows/github_actions.yml/badge.svg)](https://github.com/MIAOU2922/VRCX/actions/workflows/github_actions.yml)
 [![Crowdin](https://badges.crowdin.net/vrcx/localized.svg)](https://crowdin.com/project/vrcx)
 [![VRCX Discord Invite](https://img.shields.io/discord/854071236363550763?color=%237289DA&logo=discord&logoColor=white&label=discord)](https://vrcx.app/discord)
 
@@ -16,7 +16,7 @@ VRCX は VRChat クライアント (デスクトップ & VR) や Web サイト�
 
 <div align="center">
 
-[こちら](https://github.com/vrcx-team/VRCX/releases/latest)から最新のインストーラー (`VRCX_Setup.exe`) をダウンロードして実行してください。
+[こちら](https://github.com/MIAOU2922/VRCX/releases/latest)から最新のインストーラー (`VRCX_Setup.exe`) をダウンロードして実行してください。
 
 # 機能
 
@@ -35,7 +35,7 @@ VRCX は VRChat クライアント (デスクトップ & VR) や Web サイト�
 - :floppy_disk: ワールドの永続化
   - ワールドが対応している場合、設定やセーブデータ、インベントリなどのデータを保存することができます。
   - **注意**: この機能を使うには、VRChat の設定で「信頼されていない URL を許可」を有効化しておく必要があります。
-  - 開発者向け: [Wiki Page - World Persistence (PWI)](<https://github.com/vrcx-team/VRCX/wiki/World-Persistence-(PWI)>)
+  - 開発者向け: [Wiki Page - World Persistence (PWI)](<https://github.com/MIAOU2922/VRCX/wiki/World-Persistence-(PWI)>)
 - :mag: アバター、ユーザー、ワールド、グループの検索
 - :earth_americas: 無制限！ローカル保存のワールドお気に入りリスト
 - :camera: ゲーム内で撮った写真にワールドデータを保存することで、半年前に撮影した綺麗なワールドをいつでも振り返ることができます。
@@ -56,9 +56,9 @@ VRCX は VRChat クライアント (デスクトップ & VR) や Web サイト�
 
 ## その他
 
-- VRCX の変わった姿を見たい？[テーマ](https://github.com/vrcx-team/VRCX/wiki/Themes)をチェック！
-- VRCX をソースからビルドするには[こちらのガイド](https://github.com/vrcx-team/VRCX/wiki/Building-from-source)をご覧ください。
-- VRCX を Linux で動かすには[こちらのガイド](https://github.com/vrcx-team/VRCX/wiki/Running-VRCX-on-Linux)をご覧ください。
+- VRCX の変わった姿を見たい？[テーマ](https://github.com/MIAOU2922/VRCX/wiki/Themes)をチェック！
+- VRCX をソースからビルドするには[こちらのガイド](https://github.com/MIAOU2922/VRCX/wiki/Building-from-source)をご覧ください。
+- VRCX を Linux で動かすには[こちらのガイド](https://github.com/MIAOU2922/VRCX/wiki/Running-VRCX-on-Linux)をご覧ください。
 
 # Screenshots
 

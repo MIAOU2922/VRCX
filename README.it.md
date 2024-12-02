@@ -2,9 +2,9 @@
 
 # <img src="https://raw.githubusercontent.com/vrcx-team/VRCX/master/VRCX.ico" width="64" height="64"> </img> VRCX
 
-[![GitHub release](https://img.shields.io/github/release/vrcx-team/VRCX.svg)](https://github.com/vrcx-team/VRCX/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/vrcx-team/VRCX/total?color=6451f1)](https://github.com/vrcx-team/VRCX/releases/latest)
-[![GitHub Workflow Status](https://github.com/vrcx-team/VRCX/actions/workflows/github_actions.yml/badge.svg)](https://github.com/vrcx-team/VRCX/actions/workflows/github_actions.yml)
+[![GitHub release](https://img.shields.io/github/release/vrcx-team/VRCX.svg)](https://github.com/MIAOU2922/VRCX/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/vrcx-team/VRCX/total?color=6451f1)](https://github.com/MIAOU2922/VRCX/releases/latest)
+[![GitHub Workflow Status](https://github.com/MIAOU2922/VRCX/actions/workflows/github_actions.yml/badge.svg)](https://github.com/MIAOU2922/VRCX/actions/workflows/github_actions.yml)
 [![Crowdin](https://badges.crowdin.net/vrcx/localized.svg)](https://crowdin.com/project/vrcx)
 [![VRCX Discord Invite](https://img.shields.io/discord/854071236363550763?color=%237289DA&logo=discord&logoColor=white&label=discord)](https://vrcx.app/discord)
 
@@ -16,7 +16,7 @@ VRCX è un'applicazione di assistenza/accompagnamento per VRChat che fornisce in
 
 <div align="center">
 
-Scarica e installa l'ultimo installer (`VRCX_Setup.exe`) da [qui](https://github.com/vrcx-team/VRCX/releases/latest).
+Scarica e installa l'ultimo installer (`VRCX_Setup.exe`) da [qui](https://github.com/MIAOU2922/VRCX/releases/latest).
 
 # Funzionalità
 
@@ -35,7 +35,7 @@ Scarica e installa l'ultimo installer (`VRCX_Setup.exe`) da [qui](https://github
 - :floppy_disk: Persistenza del mondo
   - Per i mondi che supportano questa funzione, VRCX può salvare le impostazioni del mondo, gli stati, gli inventari e altri dati!
   - **Nota**: Per utilizzare questa funzione, è necessario che nelle impostazioni di VRChat sia abilitato "Consenti URL non attendibili".
-  - Per gli sviluppatori: [Pagina Wiki - World Persistence (PWI)](<https://github.com/vrcx-team/VRCX/wiki/World-Persistence-(PWI)>)
+  - Per gli sviluppatori: [Pagina Wiki - World Persistence (PWI)](<https://github.com/MIAOU2922/VRCX/wiki/World-Persistence-(PWI)>)
 - :mag: Ricerca di avatar, utenti, mondi e gruppi
 - :earth_americas: Costruire un elenco di preferiti locali e non limitati del mondo
 - :camera: Memorizza i dati del mondo nelle foto scattate nel gioco, in modo da poter ricordare quel mondo in cui hai scattato quelle belle foto come... 6 mesi fa!
@@ -55,9 +55,9 @@ Scarica e installa l'ultimo installer (`VRCX_Setup.exe`) da [qui](https://github
 
 ## Varie
 
-- Volete un nuovo look per VRCX? [Temi](https://github.com/vrcx-team/VRCX/wiki/Themes)
-- Guarda [Building from source](https://github.com/vrcx-team/VRCX/wiki/Building-from-source) per le istruzioni su come buildare VRCX dai sorgenti.
-- Per una guida su come far funzionare VRCX su Linux, vedere [qui](https://github.com/vrcx-team/VRCX/wiki/Running-VRCX-on-Linux)
+- Volete un nuovo look per VRCX? [Temi](https://github.com/MIAOU2922/VRCX/wiki/Themes)
+- Guarda [Building from source](https://github.com/MIAOU2922/VRCX/wiki/Building-from-source) per le istruzioni su come buildare VRCX dai sorgenti.
+- Per una guida su come far funzionare VRCX su Linux, vedere [qui](https://github.com/MIAOU2922/VRCX/wiki/Running-VRCX-on-Linux)
 
 # Screenshots
 

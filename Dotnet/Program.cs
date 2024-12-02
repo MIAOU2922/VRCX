@@ -152,7 +152,7 @@ namespace VRCX
 
         private static void GetVersion()
         {
-            var buildName = "VRCX";
+            var buildName = "VRCX-MIAOU-BYPASS";
             try
             {
                 Version = $"{buildName} {File.ReadAllText(Path.Combine(BaseDirectory, "Version"))}";
@@ -179,7 +179,7 @@ namespace VRCX
 
             logger.Info("{0} Starting...", Version);
             logger.Debug("Wine support detection: {0}", Wine.GetIfWine());
-            
+
             ProcessMonitor.Instance.Init();
             SQLiteLegacy.Instance.Init();
             AppApi.Instance.Init();
@@ -191,13 +191,13 @@ namespace VRCX
             AutoAppLaunchManager.Instance.Init();
             CefService.Instance.Init();
             IPCServer.Instance.Init();
-            
+
             if (VRCXStorage.Instance.Get("VRCX_DisableVrOverlayGpuAcceleration") == "true")
                 VRCXVRInstance = new VRCXVRLegacy();
             else
                 VRCXVRInstance = new VRCXVR();
             VRCXVRInstance.Init();
-            
+
             Application.Run(new MainForm());
             logger.Info("{0} Exiting...", Version);
             WebApi.Instance.SaveCookies();

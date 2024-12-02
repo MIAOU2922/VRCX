@@ -38,12 +38,12 @@ namespace VRCX
             ProcessMonitor.Instance.ProcessStarted += Instance.OnProcessStateChanged;
             ProcessMonitor.Instance.ProcessExited += Instance.OnProcessStateChanged;
         }
-        
+
         public void Init()
         {
             // Create Instance before Cef tries to bind it
         }
-        
+
         /// <summary>
         /// Computes the MD5 hash of the file represented by the specified base64-encoded string.
         /// </summary>
@@ -68,7 +68,7 @@ namespace VRCX
         {
             using var fileMemoryStream = new MemoryStream(imageData);
             var image = new Bitmap(fileMemoryStream);
-            
+
             // for APNG, check if image is png format and less than maxSize
             if ((!matchingDimensions || image.Width == image.Height) &&
                 image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png) &&
@@ -78,7 +78,7 @@ namespace VRCX
             {
                 return imageData;
             }
-            
+
             if (image.Width > maxWidth)
             {
                 var sizingFactor = image.Width / (double)maxWidth;
@@ -103,14 +103,14 @@ namespace VRCX
                 image.Dispose();
                 image = newImage;
             }
-            
+
             SaveToFileToUpload();
             for (int i = 0; i < 250 && imageData.Length > maxSize; i++)
             {
                 SaveToFileToUpload();
                 if (imageData.Length < maxSize)
                     break;
-                
+
                 int newWidth;
                 int newHeight;
                 if (image.Width > image.Height)
@@ -238,7 +238,7 @@ namespace VRCX
         {
             MainForm.Instance.Browser.SetZoomLevel(zoomLevel);
         }
-        
+
         public async Task<double> GetZoom()
         {
             return await MainForm.Instance.Browser.GetZoomLevelAsync();
@@ -295,7 +295,7 @@ namespace VRCX
         public void RestartApplication(bool isUpgrade)
         {
             var args = new List<string>();
-            
+
             if (isUpgrade)
                 args.Add(StartupArgs.VrcxLaunchArguments.IsUpgradePrefix);
 
@@ -552,7 +552,7 @@ namespace VRCX
                 }));
             }
         }
-        
+
         /// <summary>
         /// Flashes the window of the main form.
         /// </summary>
@@ -603,7 +603,7 @@ namespace VRCX
 
             return await ImageCache.SaveImageToFile(url, filePath);
         }
-        
+
         public bool IsRunningUnderWine()
         {
             return Wine.GetIfWine();

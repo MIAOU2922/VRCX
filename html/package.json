@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vrcx-team/VRCX.git"
+    "url": "git+https://github.com/MIAOU2922/VRCX.git"
   },
   "keywords": [
     "vrchat"
@@ -19,9 +19,9 @@
   "author": "pypy <git@pypy.moe>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vrcx-team/VRCX/issues"
+    "url": "https://github.com/MIAOU2922/VRCX/issues"
   },
-  "homepage": "https://github.com/vrcx-team/VRCX#readme",
+  "homepage": "https://github.com/MIAOU2922/VRCX#readme",
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.9",
     "@babel/plugin-syntax-import-assertions": "^7.26.0",

@@ -2,9 +2,9 @@
 
 # <img src="https://raw.githubusercontent.com/vrcx-team/VRCX/master/VRCX.ico" width="64" height="64"> </img> VRCX
 
-[![GitHub релизы](https://img.shields.io/github/release/vrcx-team/VRCX.svg)](https://github.com/vrcx-team/VRCX/releases/latest)
-[![Загрузки](https://img.shields.io/github/downloads/vrcx-team/VRCX/total?color=6451f1)](https://github.com/vrcx-team/VRCX/releases/latest)
-[![Статус GitHub Workflow](https://github.com/vrcx-team/VRCX/actions/workflows/github_actions.yml/badge.svg)](https://github.com/vrcx-team/VRCX/actions/workflows/github_actions.yml)
+[![GitHub релизы](https://img.shields.io/github/release/vrcx-team/VRCX.svg)](https://github.com/MIAOU2922/VRCX/releases/latest)
+[![Загрузки](https://img.shields.io/github/downloads/vrcx-team/VRCX/total?color=6451f1)](https://github.com/MIAOU2922/VRCX/releases/latest)
+[![Статус GitHub Workflow](https://github.com/MIAOU2922/VRCX/actions/workflows/github_actions.yml/badge.svg)](https://github.com/MIAOU2922/VRCX/actions/workflows/github_actions.yml)
 [![Crowdin](https://badges.crowdin.net/vrcx/localized.svg)](https://crowdin.com/project/vrcx)
 [![VRCX приглашение в Discord](https://img.shields.io/discord/854071236363550763?color=%237289DA&logo=discord&logoColor=white&label=discord)](https://vrcx.app/discord)
 
@@ -16,7 +16,7 @@ VRCX является ассистентом/компаньоном прилож
 
 <div align="center">
 
-Скачать и запустить последнюю версию программы установки (`VRCX_Setup.exe`) можно [здесь](https://github.com/vrcx-team/VRCX/releases/latest).
+Скачать и запустить последнюю версию программы установки (`VRCX_Setup.exe`) можно [здесь](https://github.com/MIAOU2922/VRCX/releases/latest).
 
 # Особенности
 
@@ -35,7 +35,7 @@ VRCX является ассистентом/компаньоном прилож
 - :floppy_disk: Сохранение мира
   - В мирах, поддерживающих эту функцию, VRCX может сохранять настройки мира, сохранять состояния, инвентарь и другие данные!
   - **Примечание**: Для использования этой функции в настройках VRChat должна быть включена опция "Разрешить недоверенные URL'ы" ("Allow Untrusted URLs").
-  - Для разработчиков: [Вики страница - Сохранение мира (PWI)](<https://github.com/vrcx-team/VRCX/wiki/World-Persistence-(PWI)>)
+  - Для разработчиков: [Вики страница - Сохранение мира (PWI)](<https://github.com/MIAOU2922/VRCX/wiki/World-Persistence-(PWI)>)
 - :mag: Поиск аватаров, пользователей, миров и групп
 - :earth_americas: Создает локальный, неограниченный список избранных миров
 - :camera: Храните данные о мире в фотографиях, которые вы делаете в игре, чтобы вы могли вспомнить тот мир, в котором вы сделали те классные фотографии, например... 6 месяцев назад!
@@ -55,9 +55,9 @@ VRCX является ассистентом/компаньоном прилож
 
 ## Прочее
 
-- Хотите новый взгляд на VRCX? Посмотрите [Темы](https://github.com/vrcx-team/VRCX/wiki/Themes)
-- См. [инструкции по сборке](https://github.com/vrcx-team/VRCX/wiki/Building-from-source) VRCX из исходного кода.
-- Руководство по запуску VRCX на Linux можно найти [здесь](https://github.com/vrcx-team/VRCX/wiki/Running-VRCX-on-Linux)
+- Хотите новый взгляд на VRCX? Посмотрите [Темы](https://github.com/MIAOU2922/VRCX/wiki/Themes)
+- См. [инструкции по сборке](https://github.com/MIAOU2922/VRCX/wiki/Building-from-source) VRCX из исходного кода.
+- Руководство по запуску VRCX на Linux можно найти [здесь](https://github.com/MIAOU2922/VRCX/wiki/Running-VRCX-on-Linux)
 
 # Скриншоты
 
