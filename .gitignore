@@ -260,5 +260,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-build-scripts/VRCX_2024.12.01.zip
+build-scripts/*.zip
 Installer/VRCX_Setup.exe
