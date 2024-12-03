@@ -21,7 +21,7 @@ export default class extends baseClass {
         pendingVRCXUpdate: false,
         branches: {
             Stable: {
-                name: 'Stable',
+                name: 'Fork',
                 urlReleases: 'https://api.github.com/repos/MIAOU2922/VRCX/releases',
                 urlLatest: 'https://api.github.com/repos/MIAOU2922/VRCX/releases/latest'
             }
