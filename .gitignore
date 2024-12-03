@@ -261,3 +261,4 @@ paket-files/
 __pycache__/
 *.pyc
 build-scripts/VRCX_2024.12.01.zip
+Installer/VRCX_Setup.exe
