@@ -283,3 +283,19 @@ mixin playerListTab()
                                 template(#content)
                                     span(v-text="link")
                                 img(:src="getFaviconUrl(link)" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;cursor:pointer" @click.stop="openExternalLink(link)")
+                    
+                    //- truc de test 
+                    
+                    //- groupe name
+                    el-table-column(:label="$t('table.playerList.group')" min-width="140" prop="group" sortable="custom")
+                        template(v-once #default="scope")
+                            span(v-if="randomUserColours" v-text="scope.row.ref.group" :style="{'color':scope.row.ref.$userColour}")
+                            span(v-else v-text="scope.row.ref.group")
+                    //- groupe image 
+                    el-table-column(:label="$t('table.playerList.group_image')" width="70" prop="photo")
+                        template(v-once #default="scope")
+                            template(v-if="userImage(scope.row.ref)")
+                                el-popover(placement="right" height="500px" trigger="hover")
+                                    img.friends-list-avatar(slot="reference" v-lazy="userImage(scope.row.ref)")
+                                    img.friends-list-avatar(v-lazy="userImageFull(scope.row.ref)" style="height:500px;cursor:pointer" @click="showFullscreenImageDialog(userImageFull(scope.row.ref))")
+                    

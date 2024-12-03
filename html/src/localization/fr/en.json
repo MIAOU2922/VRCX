@@ -1651,7 +1651,12 @@
             "date": "Date",
             "user": "Utilisateur",
             "type": "Type",
-            "detail": "Détail"
+            "detail": "Détail",
+
+            "group": "Groupe",
+            "group_image": "Groupe Image"
+
+
         },
         "friendLog": {
             "date": "Date",
