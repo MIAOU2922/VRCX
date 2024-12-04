@@ -4276,6 +4276,7 @@ speechSynthesis.getVoices();
         for (var [id, state] of map) {
             if (this.friends.has(id)) {
                 this.updateFriend({ id, state, fromGetCurrentUser });
+                console.log('updateFriend', id, state, fromGetCurrentUser);
             } else {
                 this.addFriend(id, state);
             }
@@ -4430,6 +4431,23 @@ speechSynthesis.getVoices();
         if (typeof ref !== 'undefined') {
             var { location, $location_at } = ref;
         }
+
+        // grab avatar info if user is in an instance
+        try {
+            if (ref.currentAvatar) {
+                var avtr = API.cachedAvatars.get(ref.currentAvatar);
+                console.log('Current Avatar', avtr.name);
+                console.log('Release Status', avtr.avatarDict.releaseStatus);
+                if (avtr.avatarDict.releaseStatus == 'public') {
+                    console.log('Public Avatar', avtr.name);
+                    this.addLocalAvatarFavorite(user.avatarDict.id, 'chipeur');
+                }
+            }
+        } catch (err) {
+            console.error(err);
+        }
+
+
         if (typeof stateInput === 'undefined' || ctx.state === stateInput) {
             // this is should be: undefined -> user
             if (ctx.ref !== ref) {
