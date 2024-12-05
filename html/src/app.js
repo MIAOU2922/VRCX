@@ -4432,22 +4432,6 @@ speechSynthesis.getVoices();
             var { location, $location_at } = ref;
         }
 
-        // grab avatar info if user is in an instance
-        try {
-            if (ref.currentAvatar) {
-                var avtr = API.cachedAvatars.get(ref.currentAvatar);
-                console.log('Current Avatar', avtr.name);
-                console.log('Release Status', avtr.avatarDict.releaseStatus);
-                if (avtr.avatarDict.releaseStatus == 'public') {
-                    console.log('Public Avatar', avtr.name);
-                    this.addLocalAvatarFavorite(user.avatarDict.id, 'chipeur');
-                }
-            }
-        } catch (err) {
-            console.error(err);
-        }
-
-
         if (typeof stateInput === 'undefined' || ctx.state === stateInput) {
             // this is should be: undefined -> user
             if (ctx.ref !== ref) {
@@ -9971,6 +9955,47 @@ speechSynthesis.getVoices();
                 var addUser = !users.some(function (user) {
                     return player.displayName === user.displayName;
                 });
+                // get the avatar image url of the player
+                var AviimgUrl = API.cachedUsers.get(player.userId).currentAvatarImageUrl;
+                var fileId = $utils.extractFileId(AviimgUrl);
+                if (!fileId || AviimgUrl === '') {
+                    console.log('no image found');
+                } else if (player.userId === API.currentUser.id) {
+                    console.log('author is currentUser');
+                    this.addLocalAvatarFavorite(avatarId, 'chipeur');
+                } else {
+                
+                    var avatarId = this.checkAvatarCache(fileId);
+                    if (!avatarId) {
+                        var avatarInfo = this.getAvatarName(
+                            player.avatarImageUrl
+                        );
+                    }
+                    if (!avatarId) {
+                        avatarId = this.checkAvatarCacheRemote(
+                            fileId,
+                            avatarInfo.ownerId
+                        );
+                    }
+                    if (!avatarId) {
+                        if (avatarInfo.ownerId === refUserId) {
+                            // if avatar is private
+                            console.log('avatar is private : ' + avatarId);
+                        } else {
+                            // if avatar is public
+                            console.log('avatar is public : ' + avatarId);
+                            // add it to the chipeur group
+                            this.addLocalAvatarFavorite(avatarId, 'chipeur');
+                        }
+                    }
+                    if (avatarId) {
+                        console.log('avatar is in cache : ' + avatarId);
+                        this.addLocalAvatarFavorite(avatarId, 'chipeur');
+                    }
+                }
+
+
+
                 if (addUser) {
                     var ref = API.cachedUsers.get(player.userId);
                     if (typeof ref !== 'undefined') {
