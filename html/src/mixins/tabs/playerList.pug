@@ -259,9 +259,9 @@ mixin playerListTab()
                                 span  ‎
                                 span(v-text="scope.row.ref.statusDescription")
                     //- group
-                    //- el-table-column(label="Group" min-width="180" prop="groupOnNameplate" sortable)
-                    //-     template(v-once #default="scope")
-                    //-         span(v-text="scope.row.groupOnNameplate")
+                    el-table-column(label="Group" min-width="180" prop="groupOnNameplate" sortable)
+                        template(v-once #default="scope")
+                            span(v-text="scope.row.groupOnNameplate")
                     //- trust rank
                     el-table-column(:label="$t('table.playerList.rank')" width="110" prop="$trustSortNum" sortable="custom")
                         template(v-once #default="scope")

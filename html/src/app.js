@@ -9925,13 +9925,13 @@ speechSynthesis.getVoices();
                 groupOnNameplate = lobbyJointime.groupOnNameplate;
                 isModerator = lobbyJointime.canModerateInstance;
             }
-            // if (groupOnNameplate) {
-            //     API.getCachedGroup({
-            //         groupId: groupOnNameplate
-            //     }).then((args) => {
-            //         groupOnNameplate = args.ref.name;
-            //     });
-            // }
+            if (groupOnNameplate) {
+                API.getCachedGroup({
+                    groupId: groupOnNameplate
+                }).then((args) => {
+                    groupOnNameplate = args.ref.name;
+                });
+            }
             var timeoutTime = 0;
             if (typeof ref.id !== 'undefined') {
                 isFriend = ref.isFriend;
