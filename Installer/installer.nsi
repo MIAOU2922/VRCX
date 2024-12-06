@@ -15,7 +15,7 @@
     VIAddVersionKey "FileVersion" "${VERSION}"
     VIAddVersionKey "ProductName" "VRCX"
     VIAddVersionKey "ProductVersion" "${PRODUCT_VERSION}"
-    VIAddVersionKey "LegalCopyright" "Copyright vrcx-team, pypy, _MIAOU_"
+    VIAddVersionKey "LegalCopyright" "Copyright vrcx-team, pypy, natsumi"
     VIAddVersionKey "FileDescription" "Friendship management tool for VRChat"
 
 ;--------------------------------

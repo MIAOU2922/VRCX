@@ -1,4 +1,4 @@
-// Copyright(c) 2019-2022 pypy, _MIAOU_ and individual contributors.
+// Copyright(c) 2019-2022 pypy, Natsumi and individual contributors.
 // All rights reserved.
 //
 // This work is licensed under the terms of the MIT license.
@@ -104,7 +104,7 @@ namespace VRCX
                     CpuAccessFlags = CpuAccessFlags.Write
                 }
             );
-
+            
             _texture2?.Dispose();
             _texture2 = new Texture2D(
                 _device,
@@ -136,7 +136,7 @@ namespace VRCX
             var dashboardHandle = 0UL;
             var overlayHandle1 = 0UL;
             var overlayHandle2 = 0UL;
-
+            
             _wristOverlay = new OffScreenBrowserLegacy(
                 "file://vrcx/vr.html?1",
                 512,
@@ -323,7 +323,7 @@ namespace VRCX
                         var success = system.GetControllerState(i, ref state, (uint)Marshal.SizeOf(state));
                         if (!success)
                             break; // this fails while SteamVR overlay is open
-
+                    
                         var prox = state.ulButtonPressed & (1UL << ((int)EVRButtonId.k_EButton_ProximitySensor));
                         var isHmdAfk = prox == 0;
                         if (isHmdAfk != IsHmdAfk)
@@ -365,82 +365,82 @@ namespace VRCX
                     case ETrackedDeviceClass.Controller:
                     case ETrackedDeviceClass.GenericTracker:
                     case ETrackedDeviceClass.TrackingReference:
+                    {
+                        var err = ETrackedPropertyError.TrackedProp_Success;
+                        var batteryPercentage = system.GetFloatTrackedDeviceProperty(i, ETrackedDeviceProperty.Prop_DeviceBatteryPercentage_Float, ref err);
+                        if (err != ETrackedPropertyError.TrackedProp_Success)
                         {
-                            var err = ETrackedPropertyError.TrackedProp_Success;
-                            var batteryPercentage = system.GetFloatTrackedDeviceProperty(i, ETrackedDeviceProperty.Prop_DeviceBatteryPercentage_Float, ref err);
-                            if (err != ETrackedPropertyError.TrackedProp_Success)
-                            {
-                                batteryPercentage = 1f;
-                            }
+                            batteryPercentage = 1f;
+                        }
 
-                            err = ETrackedPropertyError.TrackedProp_Success;
-                            var isCharging = system.GetBoolTrackedDeviceProperty(i, ETrackedDeviceProperty.Prop_DeviceIsCharging_Bool, ref err);
-                            if (err != ETrackedPropertyError.TrackedProp_Success)
-                            {
-                                isCharging = false;
-                            }
+                        err = ETrackedPropertyError.TrackedProp_Success;
+                        var isCharging = system.GetBoolTrackedDeviceProperty(i, ETrackedDeviceProperty.Prop_DeviceIsCharging_Bool, ref err);
+                        if (err != ETrackedPropertyError.TrackedProp_Success)
+                        {
+                            isCharging = false;
+                        }
 
-                            sb.Clear();
-                            system.GetStringTrackedDeviceProperty(i, ETrackedDeviceProperty.Prop_TrackingSystemName_String, sb, (uint)sb.Capacity, ref err);
-                            var isOculus = sb.ToString().IndexOf("oculus", StringComparison.OrdinalIgnoreCase) >= 0;
-                            // Oculus : B/Y, Bit 1, Mask 2
-                            // Oculus : A/X, Bit 7, Mask 128
-                            // Vive : Menu, Bit 1, Mask 2,
-                            // Vive : Grip, Bit 2, Mask 4
-                            var role = system.GetControllerRoleForTrackedDeviceIndex(i);
-                            if (role == ETrackedControllerRole.LeftHand || role == ETrackedControllerRole.RightHand)
+                        sb.Clear();
+                        system.GetStringTrackedDeviceProperty(i, ETrackedDeviceProperty.Prop_TrackingSystemName_String, sb, (uint)sb.Capacity, ref err);
+                        var isOculus = sb.ToString().IndexOf("oculus", StringComparison.OrdinalIgnoreCase) >= 0;
+                        // Oculus : B/Y, Bit 1, Mask 2
+                        // Oculus : A/X, Bit 7, Mask 128
+                        // Vive : Menu, Bit 1, Mask 2,
+                        // Vive : Grip, Bit 2, Mask 4
+                        var role = system.GetControllerRoleForTrackedDeviceIndex(i);
+                        if (role == ETrackedControllerRole.LeftHand || role == ETrackedControllerRole.RightHand)
+                        {
+                            if (_overlayHand == 0 ||
+                                (_overlayHand == 1 && role == ETrackedControllerRole.LeftHand) ||
+                                (_overlayHand == 2 && role == ETrackedControllerRole.RightHand))
                             {
-                                if (_overlayHand == 0 ||
-                                    (_overlayHand == 1 && role == ETrackedControllerRole.LeftHand) ||
-                                    (_overlayHand == 2 && role == ETrackedControllerRole.RightHand))
+                                if (system.GetControllerState(i, ref state, (uint)Marshal.SizeOf(state)) &&
+                                    (state.ulButtonPressed & (_menuButton ? 2u : isOculus ? 128u : 4u)) != 0)
                                 {
-                                    if (system.GetControllerState(i, ref state, (uint)Marshal.SizeOf(state)) &&
-                                        (state.ulButtonPressed & (_menuButton ? 2u : isOculus ? 128u : 4u)) != 0)
+                                    _nextOverlayUpdate = DateTime.MinValue;
+                                    if (role == ETrackedControllerRole.LeftHand)
                                     {
-                                        _nextOverlayUpdate = DateTime.MinValue;
-                                        if (role == ETrackedControllerRole.LeftHand)
-                                        {
-                                            Array.Copy(_translationLeft, _translation, 3);
-                                            Array.Copy(_rotationLeft, _rotation, 3);
-                                        }
-                                        else
-                                        {
-                                            Array.Copy(_translationRight, _translation, 3);
-                                            Array.Copy(_rotationRight, _rotation, 3);
-                                        }
-
-                                        overlayIndex = i;
+                                        Array.Copy(_translationLeft, _translation, 3);
+                                        Array.Copy(_rotationLeft, _rotation, 3);
                                     }
-                                }
-                            }
+                                    else
+                                    {
+                                        Array.Copy(_translationRight, _translation, 3);
+                                        Array.Copy(_rotationRight, _rotation, 3);
+                                    }
 
-                            var type = string.Empty;
-                            if (devClass == ETrackedDeviceClass.Controller)
-                            {
-                                if (role == ETrackedControllerRole.LeftHand)
-                                {
-                                    type = "leftController";
-                                }
-                                else if (role == ETrackedControllerRole.RightHand)
-                                {
-                                    type = "rightController";
-                                }
-                                else
-                                {
-                                    type = "controller";
+                                    overlayIndex = i;
                                 }
                             }
-                            else if (devClass == ETrackedDeviceClass.GenericTracker)
-                            {
-                                type = "tracker";
-                            }
-                            else if (devClass == ETrackedDeviceClass.TrackingReference)
-                            {
-                                type = "base";
-                            }
+                        }
 
-                            var item = new[]
+                        var type = string.Empty;
+                        if (devClass == ETrackedDeviceClass.Controller)
+                        {
+                            if (role == ETrackedControllerRole.LeftHand)
                             {
+                                type = "leftController";
+                            }
+                            else if (role == ETrackedControllerRole.RightHand)
+                            {
+                                type = "rightController";
+                            }
+                            else
+                            {
+                                type = "controller";
+                            }
+                        }
+                        else if (devClass == ETrackedDeviceClass.GenericTracker)
+                        {
+                            type = "tracker";
+                        }
+                        else if (devClass == ETrackedDeviceClass.TrackingReference)
+                        {
+                            type = "base";
+                        }
+
+                        var item = new[]
+                        {
                             type,
                             system.IsTrackedDeviceConnected(i)
                                 ? "connected"
@@ -451,18 +451,18 @@ namespace VRCX
                             (batteryPercentage * 100).ToString(),
                             poses[i].eTrackingResult.ToString()
                         };
-                            _deviceListLock.EnterWriteLock();
-                            try
-                            {
-                                _deviceList.Add(item);
-                            }
-                            finally
-                            {
-                                _deviceListLock.ExitWriteLock();
-                            }
-
-                            break;
+                        _deviceListLock.EnterWriteLock();
+                        try
+                        {
+                            _deviceList.Add(item);
                         }
+                        finally
+                        {
+                            _deviceListLock.ExitWriteLock();
+                        }
+
+                        break;
+                    }
                 }
             }
         }
@@ -760,7 +760,7 @@ namespace VRCX
 
             return err;
         }
-
+        
         public override void ExecuteVrFeedFunction(string function, string json)
         {
             if (_wristOverlay == null) return;
