@@ -149,7 +149,7 @@
                 "two_factor": "Autenticação de Dois Fatores (2FA)",
                 "two_factor_enabled": "Ativado",
                 "two_factor_disabled": "Desativado",
-                "v_bucks": "V-Bucks",
+                "vrchat_credits": "Créditos do VRChat",
                 "refresh": "Clique para atualizar",
                 "logout": "Encerrar Sessão",
                 "manage_gallery_icon": "Gerenciar Fotos/Icones/Emojis",
@@ -343,26 +343,21 @@
                         "user_images": "Imagens do Usuário (mais lento)",
                         "notification_timeout": "Tempo limite da Notificação"
                     },
+                    "conditions": {
+                        "never": "Nunca",
+                        "desktop": "Modo Desktop",
+                        "inside_vr": "Dentro do VR",
+                        "outside_vr": "Fora do VR",
+                        "always": "Sempre"
+                    },
                     "desktop_notifications": {
                         "header": "Notificações do Desktop",
                         "when_to_display": "Quando mostrar",
-                        "when_to_display_never": "Nunca",
-                        "when_to_display_desktop": "Modo Desktop",
-                        "when_to_display_inside_vr": "Dentro do VR",
-                        "when_to_display_outside_vr": "Fora do VR",
-                        "when_to_display_game_closed": "Jogo Fechado",
-                        "when_to_display_game_running": "Jogo em Execução",
-                        "when_to_display_always": "Sempre",
                         "desktop_notification_while_afk": "Notificações no Desktop Enquanto AFK"
                     },
                     "text_to_speech": {
                         "header": "Texto-Para-Fala",
                         "when_to_play": "Nitificação TTS. Quando deseja reproduzir",
-                        "when_to_play_never": "Nunca",
-                        "when_to_play_inside_vr": "Dentro do VR",
-                        "when_to_play_game_closed": "Jogo Fechado",
-                        "when_to_play_game_running": "Jogo em Execução",
-                        "when_to_play_always": "Sempre",
                         "tts_voice": "Voz TTS"
                     }
                 }
@@ -799,6 +794,7 @@
                 "download_package": "Baixar Pacote Unity",
                 "delete": "Excluir",
                 "delete_impostor": "Excluir Impostor",
+                "regenerate_impostor": "Recriar Impostor",
                 "create_impostor": "Criar Impostor"
             },
             "info": {

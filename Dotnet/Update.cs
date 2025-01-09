@@ -35,8 +35,9 @@ namespace VRCX
 
         private static void Install()
         {
-            var setupArguments = "/S";
-            if (Wine.GetIfWine()) setupArguments += " /DISABLE_SHORTCUT=true";
+            var setupArguments = string.Empty;
+            if (Wine.GetIfWine())
+                setupArguments += "/SKIP_SHORTCUT=true";
             
             try
             {
@@ -134,7 +135,7 @@ namespace VRCX
                 if (startIndex >= 0)
                 {
                     startIndex += "filename=".Length;
-                    int endIndex = contentDisposition.IndexOf(";", startIndex);
+                    int endIndex = contentDisposition.IndexOf(';', startIndex);
                     if (endIndex == -1)
                     {
                         endIndex = contentDisposition.Length;
