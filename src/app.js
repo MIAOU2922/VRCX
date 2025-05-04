@@ -730,7 +730,7 @@ console.log(`isLinux: ${LINUX}`);
                 $travelingToTime: Date.now(),
                 $offline_for: '',
                 $active_for: Date.now(),
-                $isVRCPlus: false,
+                $isVRCPlus: true,
                 $isModerator: false,
                 $isTroll: false,
                 $isProbableTroll: false,

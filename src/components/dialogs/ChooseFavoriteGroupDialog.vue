@@ -130,6 +130,7 @@
                 }
             },
             isLocalUserVrcplusSupporter() {
+                return true;
                 return this.API.currentUser.$isVRCPlus;
             }
         },
