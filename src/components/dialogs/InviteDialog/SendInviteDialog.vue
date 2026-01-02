@@ -6,34 +6,7 @@
         width="800px"
         append-to-body
         @close="cancelSendInvite">
-        <template v-if="isLocalUserVrcPlusSupporter">
-            <!--            <template v-if="gallerySelectDialog.selectedFileId">-->
-            <!--                <div style="display: inline-block; flex: none; margin-right: 5px">-->
-            <!--                    <el-popover placement="right" :width="500px" trigger="click">-->
-            <!--                        <template #reference>-->
-            <!--                            <img-->
-            <!--                                class="x-link"-->
-            <!--                                :src="gallerySelectDialog.selectedImageUrl"-->
-            <!--                                style="flex: none; width: 60px; height: 60px; border-radius: 4px; object-fit: cover" />-->
-            <!--                        </template>-->
-            <!--                        <img-->
-            <!--                            class="x-link"-->
-            <!--                            :src="gallerySelectDialog.selectedImageUrl"-->
-            <!--                            style="height: 500px"-->
-            <!--                            @click="showFullscreenImageDialog(gallerySelectDialog.selectedImageUrl)" />-->
-            <!--                    </el-popover>-->
-            <!--                </div>-->
-            <!--                <el-button size="small" @click="clearImageGallerySelect" style="vertical-align: top">-->
-            <!--                    {{ t('dialog.invite_message.clear_selected_image') }}-->
-            <!--                </el-button>-->
-            <!--            </template>-->
-            <!--            <template v-else>-->
-            <!--                <el-button size="small" @click="showGallerySelectDialog" style="margin-right: 5px">-->
-            <!--                    {{ t('dialog.invite_message.select_image') }}-->
-            <!--                </el-button>-->
-            <!--            </template>-->
-            <input class="inviteImageUploadButton" type="file" accept="image/*" @change="inviteImageUpload" />
-        </template>
+        <input class="inviteImageUploadButton" type="file" accept="image/*" @change="inviteImageUpload" />
 
         <DataTable
             v-bind="inviteMessageTable"

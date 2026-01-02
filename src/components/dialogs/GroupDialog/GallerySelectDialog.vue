@@ -26,7 +26,6 @@
                     type="default"
                     size="small"
                     :icon="Upload"
-                    :disabled="!isLocalUserVrcPlusSupporter"
                     @click="displayGalleryUpload"
                     >{{ t('dialog.gallery_select.upload') }}</el-button
                 >

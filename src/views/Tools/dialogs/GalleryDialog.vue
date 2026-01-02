@@ -41,7 +41,7 @@
                         size="small"
                         @click="displayGalleryUpload"
                         :icon="Upload"
-                        :disabled="!isLocalUserVrcPlusSupporter || isUploading">
+                        :disabled="isUploading">
                         {{ t('dialog.gallery_icons.upload') }}
                     </el-button>
                     <el-button
@@ -115,7 +115,7 @@
                         size="small"
                         @click="displayVRCPlusIconUpload"
                         :icon="Upload"
-                        :disabled="!isLocalUserVrcPlusSupporter || isUploading">
+                        :disabled="isUploading">
                         {{ t('dialog.gallery_icons.upload') }}
                     </el-button>
                     <el-button
@@ -190,7 +190,7 @@
                             size="small"
                             @click="displayEmojiUpload"
                             :icon="Upload"
-                            :disabled="!isLocalUserVrcPlusSupporter || isUploading">
+                            :disabled="isUploading">
                             {{ t('dialog.gallery_icons.upload') }}
                         </el-button>
                     </el-button-group>
@@ -331,7 +331,7 @@
                         size="small"
                         @click="displayStickerUpload"
                         :icon="Upload"
-                        :disabled="!isLocalUserVrcPlusSupporter || isUploading">
+                        :disabled="isUploading">
                         {{ t('dialog.gallery_icons.upload') }}
                     </el-button>
                 </el-button-group>
@@ -398,7 +398,7 @@
                             size="small"
                             @click="displayPrintUpload"
                             :icon="Upload"
-                            :disabled="!isLocalUserVrcPlusSupporter || isUploading">
+                            :disabled="isUploading">
                             {{ t('dialog.gallery_icons.upload') }}
                         </el-button>
                     </el-button-group>
@@ -665,13 +665,6 @@
     }
 
     function setProfilePicOverride(fileId) {
-        if (!isLocalUserVrcPlusSupporter.value) {
-            ElMessage({
-                message: 'VRCPlus required',
-                type: 'error'
-            });
-            return;
-        }
         let profilePicOverride = '';
         if (fileId) {
             profilePicOverride = `${AppDebug.endpointDomain}/file/${fileId}/1`;
@@ -768,13 +761,6 @@
     }
 
     function setVRCPlusIcon(fileId) {
-        if (!isLocalUserVrcPlusSupporter.value) {
-            ElMessage({
-                message: 'VRCPlus required',
-                type: 'error'
-            });
-            return;
-        }
         let userIcon = '';
         if (fileId) {
             userIcon = `${AppDebug.endpointDomain}/file/${fileId}/1`;

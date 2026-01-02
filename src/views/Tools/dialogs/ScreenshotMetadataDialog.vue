@@ -35,7 +35,7 @@
                 >{{ t('dialog.screenshot_metadata.open_folder') }}</el-button
             >
             <el-button
-                v-if="isLocalUserVrcPlusSupporter && screenshotMetadataDialog.metadata.filePath"
+                v-if="screenshotMetadataDialog.metadata.filePath"
                 size="small"
                 :icon="Upload"
                 @click="uploadScreenshotToGallery"

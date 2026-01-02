@@ -117,7 +117,7 @@
                 "header": "Avatars",
                 "search": "Rechercher",
                 "vrchat_favorites": "Favoris VRChat",
-                "local_favorites": "Favoris locaux (Requires VRC+)",
+                "local_favorites": "Favoris locaux",
                 "new_group": "Nouveau groupe",
                 "refresh": "Réactualiser",
                 "cancel_refresh": "Annuler la réactualisation"
@@ -1036,7 +1036,7 @@
             "header": "Choisir un groupe",
             "vrchat_favorites": "Favoris VRChat",
             "local_favorites": "Favoris locaux",
-            "local_avatar_favorites": "Local Favorites (Requires VRC+)"
+            "local_avatar_favorites": "Favoris locaux"
         },
         "invite": {
             "header": "Inviter",

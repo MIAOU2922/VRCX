@@ -982,12 +982,7 @@
                                     {{ userGroups.remainingGroups.length }}
                                     <template v-if="currentUser.id === userDialog.id">
                                         /
-                                        <template v-if="isLocalUserVrcPlusSupporter">
-                                            {{ cachedConfig?.constants?.GROUPS?.MAX_JOINED_PLUS }}
-                                        </template>
-                                        <template v-else>
-                                            {{ cachedConfig?.constants?.GROUPS?.MAX_JOINED }}
-                                        </template>
+                                        {{ cachedConfig?.constants?.GROUPS?.MAX_JOINED_PLUS }}
                                     </template>
                                 </span>
                                 <div

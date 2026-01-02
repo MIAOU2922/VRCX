@@ -632,9 +632,7 @@
         D.strict = false;
         D.shortName = '';
         D.secureOrShortName = '';
-        if (!isLocalUserVrcPlusSupporter.value) {
-            D.displayName = '';
-        }
+        D.displayName = '';
         const args = await groupRequest.getGroupPermissions({ userId: currentUser.value.id });
         handleGroupPermissions(args);
         buildInstance();

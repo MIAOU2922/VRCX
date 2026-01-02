@@ -6,9 +6,7 @@
         width="800px"
         append-to-body
         @close="cancelSendInviteRequest">
-        <template v-if="isLocalUserVrcPlusSupporter">
-            <input class="inviteImageUploadButton" type="file" accept="image/*" @change="inviteImageUpload" />
-        </template>
+        <input class="inviteImageUploadButton" type="file" accept="image/*" @change="inviteImageUpload" />
 
         <DataTable
             v-bind="inviteRequestMessageTable"

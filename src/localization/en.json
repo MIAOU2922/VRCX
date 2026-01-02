@@ -169,7 +169,7 @@
                 "header": "Avatars",
                 "search": "Search",
                 "vrchat_favorites": "VRChat Favorites",
-                "local_favorites": "Local Favorites (Requires VRC+)",
+                "local_favorites": "Local Favorites",
                 "new_group": "New Group",
                 "refresh": "Refresh",
                 "cancel_refresh": "Cancel Refresh",
@@ -1320,7 +1320,7 @@
             "header": "Choose Group",
             "vrchat_favorites": "VRChat Favorites",
             "local_favorites": "Local Favorites",
-            "local_avatar_favorites": "Local Favorites (Requires VRC+)"
+            "local_avatar_favorites": "Local Favorites"
         },
         "invite": {
             "header": "Invite",

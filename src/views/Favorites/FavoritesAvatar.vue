@@ -261,13 +261,12 @@
                             <div v-else class="group-empty">No Data</div>
                             <el-tooltip
                                 v-if="!isCreatingLocalGroup"
-                                :disabled="isLocalUserVrcPlusSupporter"
+                                :disabled="true"
                                 :content="t('view.favorite.avatars.local_favorites')">
                                 <div
                                     :class="[
                                         'group-item',
-                                        'group-item--new',
-                                        { 'is-disabled': !isLocalUserVrcPlusSupporter }
+                                        'group-item--new'
                                     ]"
                                     @click="startLocalGroupCreation">
                                     <el-icon><Plus /></el-icon>
@@ -356,7 +355,7 @@
                             <el-switch
                                 v-model="avatarEditMode"
                                 size="small"
-                                :disabled="isSearchActive || !activeRemoteGroup"></el-switch>
+                                :disabled="isSearchActive || (!activeRemoteGroup && !isLocalGroupSelected)"></el-switch>
                         </div>
                     </div>
                     <div class="favorites-content__edit-actions">
@@ -554,7 +553,7 @@
         checkInvalidLocalAvatars,
         removeInvalidLocalAvatars
     } = favoriteStore;
-    const { avatarHistory } = storeToRefs(useAvatarStore());
+    const { avatarHistory, cachedAvatars } = storeToRefs(useAvatarStore());
     const { promptClearAvatarHistory, showAvatarDialog, applyAvatar } = useAvatarStore();
     const { isLocalUserVrcPlusSupporter } = storeToRefs(useUserStore());
     const { t } = useI18n();
@@ -799,6 +798,29 @@
         });
     });
 
+    // Auto-load local avatar data when a local group is selected
+    watch(
+        () => selectedGroup.value,
+        (newGroup, oldGroup) => {
+            if (newGroup?.type === 'local' && !refreshingLocalFavorites.value) {
+                // Check if we need to load avatar data
+                const groupName = newGroup.key;
+                const favorites = localAvatarFavorites.value[groupName];
+                if (favorites && favorites.length > 0) {
+                    // Check if any avatar is missing data (placeholder)
+                    const needsRefresh = favorites.some((fav) => {
+                        const avatar = cachedAvatars.get(fav.id);
+                        return !avatar || !avatar.name;
+                    });
+                    if (needsRefresh) {
+                        refreshLocalAvatarFavorites();
+                    }
+                }
+            }
+        },
+        { immediate: true }
+    );
+
     function handleGroupMenuVisible(key, visible) {
         if (visible) {
             activeGroupMenu.value = key;
@@ -899,7 +921,7 @@
     }
 
     function startLocalGroupCreation() {
-        if (!isLocalUserVrcPlusSupporter.value || isCreatingLocalGroup.value) {
+        if (isCreatingLocalGroup.value) {
             return;
         }
         isCreatingLocalGroup.value = true;
